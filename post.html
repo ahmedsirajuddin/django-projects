@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block html %} ng-app="PostPageApp"{% endblock %}
+
+{% block head%}
+	<script src="{% static 'js/post.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+
+<body ng-controller="MainCtrl as ctrl" class="bodyContainer">
+
+{% include 'header.html' %}
+
+
+<div class='ccontainer'>
+{{ block.super }}
+    <form ng-submit="ctrl.add()" name="myForm">
+        <div class="form-group">
+            <label>Post</label>
+            <input type="text" name="post" class="form-control" placeholder="Type Something..." ng-model="ctrl.post.post" required>
+        </div>
+        <input type="submit" value="Post" ng-class="{'btn btn-danger disabled': myForm.$invalid, 'btn btn-success active': myForm.$valid}" ng-disabled="myForm.$invalid">
+    </form>
+</div>
+
+</body>
+
+{% endblock %}
