@@ -29,3 +29,10 @@ This JS file uses base.js. This JS file has PostPageApp which has a controller w
 
 base.js
 This JS file has the factory which handles post requests to the 'posts' URL (which calls PostViewSet which creates a Post object). It handles the success and error during post creation.
+
+
+test_post.js
+This JS file tests the code in post.js (it uses the Jasmine testing framework to test the code and Karma as the test runner).
+
+karma.conf.js
+This JS file has the configuration for karma (the test runner).
