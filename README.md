@@ -15,3 +15,17 @@ The serializer for the post. It includes 3 additional fields.
 
 When a post is created, the user creating the post (the owner) is automatically added to the list of users who like the post.
 
+urls.py:
+This file routes the URL /posts/ to PostViewSet (the view).
+
+views.py:
+The view in this file is PostViewSet. It uses PostSerializer as the serializer (which users Post as the model). The view has a 'like' and 'unlike' detail_route which allows users to like and unlike a post.
+
+post.html
+This HTML page has a form which allows users to create a post. It loads post.js and the PostPageApp AngularJS app.
+
+post.js
+This JS file uses base.js. This JS file has PostPageApp which has a controller which handles the submition of the form in post.html. It calls BaseService.add (the factory in base.js).
+
+base.js
+This JS file has the factory which handles post requests to the 'posts' URL (which calls PostViewSet which creates a Post object). It handles the success and error during post creation.
