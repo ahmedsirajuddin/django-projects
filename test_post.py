@@ -36,8 +36,7 @@ class PostTests(APITestCase):
 
     def test_get_post_list(self):
         """
-        Ensure no one can get a list of all post objects (when would this ever be needed? Users should
-        only be able to get post List by Username.
+        Ensure no one can get a list of all post objects.
         """
         url = reverse('post-list')
 
@@ -58,7 +57,7 @@ class PostTests(APITestCase):
 
     def test_get_post_detail(self):
         """
-        Ensure only authenticated users who are either can access the detail of the post.
+        Ensure only authenticated users can access the detail of the post.
         """
         Post.objects.create(post='test', owner=User.objects.get(username='a'))
         url = reverse('post-detail', kwargs={'pk':1})
