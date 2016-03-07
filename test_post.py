@@ -94,7 +94,7 @@ class PostTests(APITestCase):
         response = self.client.patch(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
-        # See if authenticated owners can patch a post object (not owner) (they shouldn't).
+        # See if authenticated owners can patch a post object (they shouldn't).
         self.client.login(username='a', password='a')
         response = self.client.patch(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
