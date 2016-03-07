@@ -19,10 +19,6 @@ angular.module("BaseApp", [])
              self.cerrorMessages = [];
              for (prop in data) {
                  if (data.hasOwnProperty(prop)){
-                     /* if (data[prop] != null && data[prop].constructor ==  Object) {
-                         self.accessErrors(data[prop]);
-                     }
-                     else { */
                      self.cerrorMessages.push(data[prop]);
                      // }
                  }
