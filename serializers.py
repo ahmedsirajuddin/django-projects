@@ -1,3 +1,5 @@
+from rest_framework import serializers
+
 class PostSerializer(serializers.ModelSerializer):
     owner = serializers.SlugRelatedField(slug_field='username', read_only=True)
     voted = serializers.SerializerMethodField()
