@@ -203,7 +203,6 @@ class PostTests(APITestCase):
         # See if authenticated users can unlike a post object (they should).
         self.assertEqual(Post.objects.get().usersVoted.count(), 1)
         self.assertEqual(Post.objects.get().usersVoted.get().username, 'b')
-        User.objects.get(username='b').userextended.watch.add(User.objects.get(username='a'))
         self.client.login(username='b', password='b')
         response = self.client.post(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
