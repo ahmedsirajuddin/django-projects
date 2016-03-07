@@ -134,7 +134,7 @@ class PostTests(APITestCase):
 
     def test_delete_post_detail(self):
         """
-        Ensure only owners can delete a post object.
+        Ensure only owners and admins can delete a post object.
         """
         Post.objects.create(post='test', owner=User.objects.get(username='a'))
         url = reverse('post-detail', kwargs={'pk':1})
@@ -148,7 +148,7 @@ class PostTests(APITestCase):
         response = self.client.delete(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
 
-        # See if authenticated owners can delete a post object (not owner) (they should).
+        # See if authenticated owners can delete a post object  (they should).
         self.client.login(username='a', password='a')
         response = self.client.delete(url, format='json')
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
