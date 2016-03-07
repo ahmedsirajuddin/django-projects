@@ -40,8 +40,12 @@ This JS file has the factory (called BaseService) which handles post requests to
 
 **test_post.js**
 
-This JS file tests the code in post.js (it uses the Jasmine testing framework to test the code and Karma as the test runner).
+This JS file unit tests the code in post.js (it uses the Jasmine testing framework to test the code and Karma as the test runner).
 
 **karma.conf.js**
 
 This JS file has the configuration for karma (the test runner).
+
+**test_post.py**
+
+This Python file unit tests the Rest API for Posts.
