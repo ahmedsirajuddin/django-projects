@@ -11,9 +11,9 @@ A Post model exists. Each post has an owner, a usersVoted field (which keeps tra
 **serializers.py**
 
 The serializer for the post. It includes 3 additional fields.
-1) voted - a boolean which is true of the user already liked the post, and false otherwise.
-2) postType - the type of post (in this case, the type of post is just 'posts')
-3) usersVotedCount - the number of users who liked the post.
+*1)* voted - a boolean which is true of the user already liked the post, and false otherwise.
+*2)* postType - the type of post (in this case, the type of post is just 'posts')
+*3)* usersVotedCount - the number of users who liked the post.
 
 When a post is created, the user creating the post (the owner) is automatically added to the list of users who like the post.
 
@@ -26,6 +26,7 @@ This file routes the URL /posts/ to PostViewSet (the view).
 The view in this file is PostViewSet. It uses PostSerializer as the serializer (which users Post as the model). The view has a 'like' and 'unlike' detail_route which allows users to like and unlike a post.
 
 **post.html**
+
 This HTML page has a form which allows users to create a post. It loads post.js and the PostPageApp AngularJS app.
 
 **post.js**
