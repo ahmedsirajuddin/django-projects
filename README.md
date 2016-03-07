@@ -23,7 +23,7 @@ This file routes the URL /posts/ to PostViewSet (the view).
 
 **views.py**
 
-The view in this file is PostViewSet. It uses PostSerializer as the serializer (which users Post as the model). The view has a 'like' and 'unlike' detail_route which allows users to like and unlike a post.
+The view in this file is PostViewSet. It uses PostSerializer as the serializer (which users Post as the model). The view has a *like* and *unlike* detail_route which allows users to like and unlike a post.
 
 **post.html**
 
